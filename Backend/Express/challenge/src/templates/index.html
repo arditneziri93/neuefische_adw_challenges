@@ -1,0 +1,34 @@
+{% import "macros/page_header.njk" as ui %}
+{% extends "_base_layout.html" %}
+
+{% block body %}
+  <!-- Page Header-->
+  {{ ui.page_header("Clean Blog", "A Blog Theme by Start Bootstrap", "/assets/img/home-bg.jpg") }}
+
+  <!-- Main Content-->
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        {% for entry in entries %}
+          <div class="post-preview">
+            <a href="/{{ entry.slug }}">
+              <h2 class="post-title">{{ entry.title }}</h2>
+              {% if entry.teaser %}
+                <h3 class="post-subtitle">{{ entry.teaser }}</h3>
+              {% endif %}
+            </a>
+            <p class="post-meta">
+              Posted by
+              <a href="#!">{{ entry.author }}</a>
+              on {{ entry.date }}
+            </p>
+          </div>
+          <hr class="my-4" />
+        {% endfor %}
+        <div class="d-flex justify-content-end mb-4">
+          <a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

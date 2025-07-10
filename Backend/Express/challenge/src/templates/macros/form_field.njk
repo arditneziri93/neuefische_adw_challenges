@@ -1,0 +1,26 @@
+{% macro form_field(id, label, placeholder, validations, type='text', isMultiline=false) %}
+{% if isMultiline %}
+  <div class="form-floating">
+    <textarea class="form-control" id="{{ id }}" placeholder="{{ placeholder }}"
+              style="height: 12rem" data-sb-validations="{{ validations }}"></textarea>
+    <label for="{{ id }}">{{ label }}</label>
+    <div class="invalid-feedback" data-sb-feedback="{{ id }}:required">
+      A {{ label | lower }} is required.
+    </div>
+  </div>
+{% else %}
+  <div class="form-floating">
+    <input class="form-control" id="{{ id }}" type="{{ type }}" placeholder="{{ placeholder }}"
+           data-sb-validations="{{ validations }}" />
+    <label for="{{ id }}">{{ label }}</label>
+    <div class="invalid-feedback" data-sb-feedback="{{ id }}:required">
+      A {{ label | lower }} is required.
+    </div>
+    {% if id == 'email' %}
+    <div class="invalid-feedback" data-sb-feedback="email:email">
+      Email is not valid.
+    </div>
+    {% endif %}
+  </div>
+{% endif %}
+{% endmacro %}
