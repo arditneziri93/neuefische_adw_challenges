@@ -1,0 +1,17 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <h1>Your message is ready</h1>
+  <label for="link">Share this link:</label>
+  <input id="link" value="{{ link }}" readonly style="width: 100%;" />
+  <button onclick="copyToClipboard()">Copy Link</button>
+
+  <script>
+    function copyToClipboard() {
+      const input = document.getElementById("link");
+      input.select();
+      document.execCommand("copy");
+      alert("Link copied to clipboard");
+    }
+  </script>
+{% endblock %}

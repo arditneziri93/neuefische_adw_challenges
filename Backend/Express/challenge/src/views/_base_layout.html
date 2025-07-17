@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en">
+  <title>{{ title or "Default Title" }}</title>
+  {% include "partials/head.njk" %}
+  <body>
+    {% include "partials/navbar.njk" %}
+    {% block body %}
+    {% endblock %}
+    {% include "partials/footer.njk" %}
+  </body>
+</html>

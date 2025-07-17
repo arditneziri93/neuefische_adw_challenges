@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <nav class="container-fluid">
+      <ul>
+        <li><img src="/assets/logo.png" alt="Burn On Read Logo" style="height: 64px;" /></li>
+      </ul>
+      <ul>
+         <li><button href="/">New Message</button></li>
+      </ul>
+    </nav>
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

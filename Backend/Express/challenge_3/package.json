@@ -1,0 +1,23 @@
+{
+  "name": "express-nunjucks-pico",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "isomorphic-dompurify": "^2.26.0",
+    "nunjucks": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/nunjucks": "^3.2.6",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
