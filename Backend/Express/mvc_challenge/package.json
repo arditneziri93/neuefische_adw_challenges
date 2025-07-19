@@ -1,20 +1,31 @@
 {
-  "name": "mvc_challenge",
+  "name": "my_app",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/app.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && node ./dist/app.js",
+    "dev": "nodemon app.js",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@types/express": "^5.0.3",
-    "@types/nunjucks": "^3.2.6",
+    "@types/color": "^4.2.0",
+    "color": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.1.0",
     "express": "^5.1.0",
     "nunjucks": "^3.2.4"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/nunjucks": "^3.2.6",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "prettier-plugin-jinja-template": "^2.1.0",
+    "ts-node": "^10.9.2"
   }
 }
